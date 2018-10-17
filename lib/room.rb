@@ -1,10 +1,10 @@
 class Room
 
-attr_reader :category
-def initialize(category, length, width)
-  @category = :bedroom
-  @length = 10
-  @width = 13
+attr_accessor :category
+def initialize(category = :bedroom, length = 10, width = 13)
+  @category = category
+  @length = length
+  @width = width
 end
 
 def area
