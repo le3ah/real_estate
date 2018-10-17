@@ -25,10 +25,10 @@ class HouseTest < Minitest::Test
     assert_equal [], house.rooms
   end
 
-  # def test
-  #   house = House.new("$400000", "123 sugar lane")
-  #   room_1 = Room.new(:bedroom, 10, 13)
-  #   assert_instance_of Room, room_1
-  # end
+  def test
+    # house = House.new("$400000", "123 sugar lane")
+    room_1 = Room.new(:bedroom, 10, 13)
+    assert_instance_of Room, room_1
+  end
 
 end
