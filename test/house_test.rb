@@ -43,17 +43,30 @@ class HouseTest < Minitest::Test
     assert_equal 4, house.add_room(room_4).count
   end
 
-  # def test_house_selects_rooms_by_category
-  #   house = House.new("$400000", "123 sugar lane")
-  #   room_1 = Room.new(:bedroom, 10, 13)
-  #   room_2 = Room.new(:bedroom, 11, 15)
-  #   room_3 = Room.new(:living_room, 25, 15)
-  #   room_4 = Room.new(:basement, 30, 41)
-  #   house.add_room(room_1)
-  #   house.add_room(room_2)
-  #   house.add_room(room_3)
-  #   house.add_room(room_4)
-  #   assert_equal 2, house.rooms_from_category(:bedroom).count
-  # end
+  def test_house_selects_rooms_by_category
+    house = House.new("$400000", "123 sugar lane")
+    room_1 = Room.new(:bedroom, 10, 13)
+    room_2 = Room.new(:bedroom, 11, 15)
+    room_3 = Room.new(:living_room, 25, 15)
+    room_4 = Room.new(:basement, 30, 41)
+    house.add_room(room_1)
+    house.add_room(room_2)
+    house.add_room(room_3)
+    house.add_room(room_4)
+    assert_equal 2, house.rooms_from_category(:bedroom).count
+    #assert_equal 1, house.rooms_from_category(:basement).count
+  end
+  def test_area
+    house = House.new("$400000", "123 sugar lane")
+    room_1 = Room.new(:bedroom, 10, 13)
+    room_2 = Room.new(:bedroom, 11, 15)
+    room_3 = Room.new(:living_room, 25, 15)
+    room_4 = Room.new(:basement, 30, 41)
+    house.add_room(room_1)
+    house.add_room(room_2)
+    house.add_room(room_3)
+    house.add_room(room_4)
+    assert_equal 1900, house.area
+  end 
 
 end
