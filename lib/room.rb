@@ -8,7 +8,9 @@ def initialize(category = :bedroom, length = 10, width = 13)
 end
 
 def area
+  room.each do |width, length|
   @length * @width
+end 
 end
 
 end
